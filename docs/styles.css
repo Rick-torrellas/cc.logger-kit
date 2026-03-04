@@ -94,3 +94,94 @@ ul ul {
     border-left: 2px solid var(--border-color);
     padding-left: 20px;
 }
+
+/* Badge para clases abstractas */
+.badge {
+    background-color: #eab308; /* Dorado/Amarillo */
+    color: #422006;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* Nota informativa */
+.note {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 15px;
+    font-size: 0.95rem;
+    color: #1e40af;
+    margin-bottom: 30px;
+}
+
+/* Tarjeta para cada método */
+.method-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: white;
+    transition: transform 0.2s ease;
+}
+
+.method-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.args {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8fafc;
+    border-radius: 4px;
+}
+
+.args strong {
+    color: #64748b;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* Badge variante para utilidad */
+.badge-utility {
+    background-color: #10b981; /* Verde esmeralda */
+    color: white;
+}
+
+/* Nota de lógica interna */
+.logic-note {
+    font-size: 0.85rem;
+    background: #fff7ed;
+    border: 1px dashed #f97316;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* Tabla de verdad para el filtro */
+.logic-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.logic-table th, .logic-table td {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.logic-table th {
+    background-color: #f1f5f9;
+}
+
+.text-success { color: #059669; font-weight: bold; }
+.text-danger { color: #dc2626; font-weight: bold; }
+
+.highlight-border {
+    border: 2px solid var(--primary-color);
+}

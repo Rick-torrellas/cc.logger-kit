@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Utilidad: SpecificLevelFilter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="badge badge-utility">UTILITY CLASS</span>
+            <h1>SpecificLevelFilter</h1>
+            <p class="inheritance"><strong>Herencia:</strong> <code>logging.Filter</code></p>
+            <p class="description">
+                Filtro de registro personalizado que <strong>solo permite</strong> registros con un nivel de log específico 
+                (exact match). Ideal para separar logs de ERROR en un archivo y logs de INFO en otro.
+            </p>
+        </header>
+
+        <hr>
+
+        <section>
+            <h2>Constructor</h2>
+            <div class="method-card">
+                <h3>__init__(self, level: Union[int, str, None] = None)</h3>
+                <p>Configura el nivel de registro que el filtro debe dejar pasar.</p>
+                <div class="args">
+                    <strong>Parámetros:</strong>
+                    <ul>
+                        <li><code>level</code>: Puede ser un entero (ej. <code>20</code>), una cadena (ej. <code>"INFO"</code>) o <code>None</code>.</li>
+                    </ul>
+                </div>
+                <p class="logic-note">
+                    <strong>Nota de lógica:</strong> Si se recibe un <code>str</code>, se convierte automáticamente a la constante entera de la librería <code>logging</code> usando <code>getattr</code>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lógica de Filtrado</h2>
+            <div class="method-card highlight-border">
+                <h3>filter(self, record: logging.LogRecord) -> bool</h3>
+                <p>Evalúa si el registro actual debe ser procesado o ignorado.</p>
+                
+                <table class="logic-table">
+                    <thead>
+                        <tr>
+                            <th>Condición</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>record.levelno == self.level</code></td>
+                            <td><span class="text-success">True</span> (Se registra)</td>
+                        </tr>
+                        <tr>
+                            <td><code>record.levelno != self.level</code></td>
+                            <td><span class="text-danger">False</span> (Se ignora)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

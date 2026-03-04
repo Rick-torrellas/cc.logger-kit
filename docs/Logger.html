@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Interface: Logger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="badge">ABSTRACT CLASS</span>
+            <h1>Logger</h1>
+            <p class="description">
+                Define la interfaz para cualquier logger que la aplicación pueda utilizar. 
+                Esta clase base abstracta establece el contrato que todas las implementaciones 
+                deben seguir, permitiendo la <strong>inversión de dependencias</strong>.
+            </p>
+        </header>
+
+        <hr>
+
+        <section>
+            <h2>Contrato de Métodos</h2>
+            <p class="note">Todos los métodos marcados con <code>@abstractmethod</code> deben ser implementados por las subclases.</p>
+
+            <div class="method-card">
+                <h3>info(self, message: str)</h3>
+                <p>Registra un mensaje informativo de nivel general.</p>
+                <div class="args">
+                    <strong>Args:</strong>
+                    <ul>
+                        <li><code>message</code>: El contenido del texto a registrar en nivel INFO.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h3>debug(self, message: str)</h3>
+                <p>Registra un mensaje de depuración para información diagnóstica detallada.</p>
+                <div class="args">
+                    <strong>Args:</strong>
+                    <ul>
+                        <li><code>message</code>: El contenido del texto a registrar en nivel DEBUG.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h3>warning(self, message: str)</h3>
+                <p>Registra un mensaje de advertencia indicando problemas potenciales.</p>
+                <div class="args">
+                    <strong>Args:</strong>
+                    <ul>
+                        <li><code>message</code>: El contenido del texto a registrar en nivel WARNING.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h3>error(self, message: str)</h3>
+                <p>Registra un mensaje de error para errores de ejecución o excepciones.</p>
+                <div class="args">
+                    <strong>Args:</strong>
+                    <ul>
+                        <li><code>message</code>: El contenido del texto a registrar en nivel ERROR.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
