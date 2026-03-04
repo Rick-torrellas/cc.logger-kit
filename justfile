@@ -10,3 +10,6 @@ build:
 # para publicar el paquete en PyPI
 publish:
     uv publish
+# Run the test suite with verbose output using pytest
+test:
+	uv run pytest -v  
