@@ -9,6 +9,11 @@ on:
     branches: [ main ]
   workflow_dispatch:
   
+# Esto cancela ejecuciones anteriores si haces un push nuevo
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # 2. Ejecutar Linting
   CI:
