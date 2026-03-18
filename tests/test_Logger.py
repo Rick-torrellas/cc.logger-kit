@@ -2,7 +2,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from core_log_engine import Logger
+from CapsuleCore_logger import Logger
 
 
 def test_logger_cannot_be_instantiated():
