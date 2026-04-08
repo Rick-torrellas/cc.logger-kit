@@ -1,74 +1,77 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Interface: Logger</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logger Interface Documentation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="logger-interface">
 
-    <div class="container">
+    <aside class="sidebar">
+        <h2>Components</h2>
+        <nav>
+            <a href="#overview" class="active">Overview</a>
+            <a href="#methods">Abstract Methods</a>
+            <a href="#implementation">Usage Example</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
         <header>
-            <span class="badge">ABSTRACT CLASS</span>
             <h1>Logger</h1>
-            <p class="description">
-                Define la interfaz para cualquier logger que la aplicación pueda utilizar. 
-                Esta clase base abstracta establece el contrato que todas las implementaciones 
-                deben seguir, permitiendo la <strong>inversión de dependencias</strong>.
-            </p>
+            <p class="subtitle">Interface for application-wide logging services.</p>
         </header>
 
-        <hr>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                The <code>Logger</code> class is an <strong>Abstract Base Class (ABC)</strong> that establishes the contract 
+                for any logging implementation within the application. 
+            </p>
+            <p>
+                By using this interface, the application follows the <strong>Dependency Inversion Principle</strong>, 
+                allowing developers to swap logging backends (e.g., Console, File, CloudWatch, Sentry) 
+                without modifying the core business logic.
+            </p>
+        </section>
 
-        <section>
-            <h2>Contrato de Métodos</h2>
-            <p class="note">Todos los métodos marcados con <code>@abstractmethod</code> deben ser implementados por las subclases.</p>
+        <section id="methods">
+            <h2>Abstract Methods</h2>
+            <p>All classes inheriting from <code>Logger</code> must implement the following methods:</p>
 
             <div class="method-card">
-                <h3>info(self, message: str)</h3>
-                <p>Registra un mensaje informativo de nivel general.</p>
-                <div class="args">
-                    <strong>Args:</strong>
-                    <ul>
-                        <li><code>message</code>: El contenido del texto a registrar en nivel INFO.</li>
-                    </ul>
-                </div>
+                <h3>info(message: str)</h3>
+                <p>Logs an informational message. Used for general application flow tracking.</p>
             </div>
 
             <div class="method-card">
-                <h3>debug(self, message: str)</h3>
-                <p>Registra un mensaje de depuración para información diagnóstica detallada.</p>
-                <div class="args">
-                    <strong>Args:</strong>
-                    <ul>
-                        <li><code>message</code>: El contenido del texto a registrar en nivel DEBUG.</li>
-                    </ul>
-                </div>
+                <h3>debug(message: str)</h3>
+                <p>Logs a debug message. Intended for detailed diagnostic information useful during development.</p>
             </div>
 
             <div class="method-card">
-                <h3>warning(self, message: str)</h3>
-                <p>Registra un mensaje de advertencia indicando problemas potenciales.</p>
-                <div class="args">
-                    <strong>Args:</strong>
-                    <ul>
-                        <li><code>message</code>: El contenido del texto a registrar en nivel WARNING.</li>
-                    </ul>
-                </div>
+                <h3>warning(message: str)</h3>
+                <p>Logs a warning message. Used to indicate potential issues or unexpected events that don't stop the app.</p>
             </div>
 
             <div class="method-card">
-                <h3>error(self, message: str)</h3>
-                <p>Registra un mensaje de error para errores de ejecución o excepciones.</p>
-                <div class="args">
-                    <strong>Args:</strong>
-                    <ul>
-                        <li><code>message</code>: El contenido del texto a registrar en nivel ERROR.</li>
-                    </ul>
-                </div>
+                <h3>error(message: str)</h3>
+                <p>Logs an error message. Used for runtime errors, exceptions, or critical failures.</p>
             </div>
         </section>
-    </div>
+
+        <section id="implementation">
+            <h2>Implementation Example</h2>
+            <p>To use this interface, create a subclass and implement the decorated methods:</p>
+            <div style="background: #1e293b; color: #f8fafc; padding: 1.5rem; border-radius: 8px; font-family: monospace; overflow-x: auto;">
+                <span style="color: #94a3b8;"># Example implementation</span><br>
+                <span style="color: #f472b6;">class</span> <span style="color: #3b82f6;">ConsoleLogger</span>(Logger):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f472b6;">def</span> <span style="color: #3b82f6;">info</span>(self, message: str):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<span style="color: #fbbf24;">f"[INFO]: {message}"</span>)
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
