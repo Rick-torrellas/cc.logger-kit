@@ -17,6 +17,30 @@ A simple and robust abstraction layer for the Python logging system, built follo
 
 ---
 
+## Installation
+
+```bash
+pip install capsulecore_logger
+```
+
+
+## Usage
+
+```python
+from CapsuleCore_logger import ConsoleLogger
+
+logger = ConsoleLogger()
+
+logger.info("This is an informational message.")
+logger.debug("This is a debug message.")
+logger.warning("This is a warning message.")
+logger.error("This is an error message.")
+```
+
+---
+
+
+
 ## 📄 License
 
 Distributed under the MIT License. See the LICENSE file for more information.
